@@ -11,9 +11,10 @@ from collections.abc import Mapping, Sequence
 from datetime import datetime, timezone
 from importlib import metadata
 from pathlib import Path
-from typing import Any, cast
+from typing import Any, TypeAlias, cast
 
 import numpy as np
+import numpy.typing as npt
 import torch
 
 from dsa_scout import __version__
@@ -57,6 +58,8 @@ from dsa_scout.training import (
 )
 
 log = get_logger(__name__)
+
+FloatArray: TypeAlias = npt.NDArray[np.float64]
 
 M = 4
 INDEXER_HEADS = 8
@@ -314,7 +317,7 @@ def build_artifact_manifest(
     }
 
 
-def mean_ci(values: np.ndarray, seed: int = 0, n_boot: int = 5000) -> dict[str, float]:
+def mean_ci(values: npt.ArrayLike, seed: int = 0, n_boot: int = 5000) -> dict[str, float]:
     """Compute deterministic bootstrap mean and confidence interval."""
     flat = np.asarray(values, dtype=float).reshape(-1)
     if flat.size == 0:
@@ -441,7 +444,7 @@ def _accumulate_recall(
     oracle_blocked: torch.Tensor,
     text_idx: int,
     layer_idx: int,
-    recall_by_layer: dict[str, np.ndarray],
+    recall_by_layer: dict[str, FloatArray],
     recall_vs_k: dict[str, dict[int, list[float]]],
     marginal: dict[str, list[float]],
 ) -> None:
@@ -475,7 +478,7 @@ def _accumulate_recall(
 
 def _build_text_type_rows(
     samples: Sequence[CorpusSample],
-    recall_by_layer: Mapping[str, np.ndarray],
+    recall_by_layer: Mapping[str, FloatArray],
 ) -> list[dict[str, object]]:
     """Build per-scorer text-category summary rows."""
     rows: list[dict[str, object]] = []
@@ -492,12 +495,12 @@ def _build_text_type_rows(
     return rows
 
 
-def values_for_summary(name: str, arr: np.ndarray) -> np.ndarray:
+def values_for_summary(name: str, arr: FloatArray) -> FloatArray:
     """Return independent values for scorer-level summaries."""
     middle = arr[:, MID_LAYERS, :]
     if name == "lightning_untrained":
-        return cast(np.ndarray, middle.reshape(-1))
-    return cast(np.ndarray, middle[0].reshape(-1))
+        return cast(FloatArray, middle.reshape(-1))
+    return cast(FloatArray, middle[0].reshape(-1))
 
 
 def build_metadata(
@@ -553,7 +556,7 @@ def build_metadata(
 
 
 def summarize_results(
-    recall_by_layer: Mapping[str, np.ndarray],
+    recall_by_layer: Mapping[str, FloatArray],
     recall_vs_k: Mapping[str, Mapping[int, list[float]]],
     recall_by_text_type: list[dict[str, object]],
     marginal: Mapping[str, list[float]],
@@ -670,11 +673,11 @@ def _empty_recall_accumulators(
     text_count: int,
     seed_count: int,
 ) -> tuple[
-    dict[str, np.ndarray],
+    dict[str, FloatArray],
     dict[str, dict[int, list[float]]],
     dict[str, list[float]],
 ]:
-    recall_by_layer = {
+    recall_by_layer: dict[str, FloatArray] = {
         name: np.zeros((seed_count, 12, text_count), dtype=float) for name in SCORER_NAMES
     }
     recall_vs_k: dict[str, dict[int, list[float]]] = {
@@ -693,7 +696,7 @@ def _evaluate_samples(
     trained_indexer: LightningIndexer,
     plots_dir: Path,
     max_length: int,
-    recall_by_layer: dict[str, np.ndarray],
+    recall_by_layer: dict[str, FloatArray],
     recall_vs_k: dict[str, dict[int, list[float]]],
     marginal: dict[str, list[float]],
 ) -> tuple[dict[str, torch.Tensor] | None, list[tuple[torch.Tensor, torch.Tensor]]]:
@@ -741,7 +744,7 @@ def _evaluate_samples(
 
 
 def _save_evaluation_artifacts(
-    recall_by_layer: Mapping[str, np.ndarray],
+    recall_by_layer: Mapping[str, FloatArray],
     recall_vs_k: Mapping[str, Mapping[int, list[float]]],
     rows: list[dict[str, object]],
     marginal: Mapping[str, list[float]],
@@ -790,7 +793,7 @@ def run_evaluation(
     results_dir: Path,
     max_length: int = 1024,
 ) -> tuple[
-    dict[str, np.ndarray],
+    dict[str, FloatArray],
     dict[str, dict[int, list[float]]],
     list[dict[str, object]],
     dict[str, list[float]],

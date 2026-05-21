@@ -8,9 +8,12 @@ import subprocess
 import sys
 from collections.abc import Iterable
 from pathlib import Path
-from typing import Any, cast
+from typing import Any, TypeAlias, cast
 
 import numpy as np
+import numpy.typing as npt
+
+FloatArray: TypeAlias = npt.NDArray[np.float64]
 
 EXPECTED_ARTIFACTS = [
     "plots/01_oracle_heatmap.png",
@@ -143,11 +146,11 @@ def package_version(init_path: Path) -> str:
     return match.group(1) if match else "missing"
 
 
-def values_for_summary(name: str, arr: np.ndarray) -> np.ndarray:
+def values_for_summary(name: str, arr: FloatArray) -> FloatArray:
     middle = arr[:, MID_LAYERS, :]
     if name == "lightning_untrained":
-        return cast(np.ndarray, middle.reshape(-1))
-    return cast(np.ndarray, middle[0].reshape(-1))
+        return cast(FloatArray, middle.reshape(-1))
+    return cast(FloatArray, middle[0].reshape(-1))
 
 
 def close_enough(observed: float, expected: float) -> bool:
@@ -162,7 +165,7 @@ def check_result_consistency(root: Path) -> list[str]:
     recall_raw = read_json(root / "results" / "recall_by_layer.json")
     hybrid_sweep = read_json(root / "results" / "hybrid_weight_sweep.json")
 
-    recall_by_layer = {
+    recall_by_layer: dict[str, FloatArray] = {
         scorer: np.asarray(values, dtype=float) for scorer, values in recall_raw.items()
     }
     middle = cast(dict[str, dict[str, float]], summary.get("middle_layer_top8", {}))

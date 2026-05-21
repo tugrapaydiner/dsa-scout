@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
 from pathlib import Path
+from typing import TypeAlias
 
 import matplotlib
 
@@ -12,6 +13,7 @@ matplotlib.use("Agg", force=True)
 import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
 import numpy as np
+import numpy.typing as npt
 import pandas as pd
 import torch
 from matplotlib.axes import Axes
@@ -20,6 +22,8 @@ from matplotlib.figure import Figure
 from dsa_scout.style import SCORER_COLORS, SCORER_LABELS, apply_style
 
 apply_style()
+
+FloatArray: TypeAlias = npt.NDArray[np.float64]
 
 TITLE_COLOR = "#1F2933"
 SUBTLE_TEXT = "#52606D"
@@ -140,7 +144,7 @@ def save_scorer_distributions(scores_by_name: Mapping[str, torch.Tensor], path: 
 
 
 def save_recall_by_layer(
-    results: Mapping[str, np.ndarray],
+    results: Mapping[str, FloatArray],
     scorer_names: Sequence[str],
     path: Path,
 ) -> None:
@@ -453,7 +457,7 @@ def save_training_curve(
     plt.close(fig)
 
 
-def save_trained_vs_untrained(results: Mapping[str, np.ndarray], path: Path) -> None:
+def save_trained_vs_untrained(results: Mapping[str, FloatArray], path: Path) -> None:
     """Save trained-vs-untrained Lightning comparison by layer."""
     layers = np.arange(12)
     untrained_by_seed = results["lightning_untrained"].mean(axis=2)
