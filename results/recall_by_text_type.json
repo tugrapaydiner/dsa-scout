@@ -1,0 +1,202 @@
+[
+  {
+    "scorer": "random",
+    "text_type": "code",
+    "recall": 0.10938658664623896
+  },
+  {
+    "scorer": "recency",
+    "text_type": "code",
+    "recall": 0.5787580072879791
+  },
+  {
+    "scorer": "window_sink",
+    "text_type": "code",
+    "recall": 0.672354233264923
+  },
+  {
+    "scorer": "linear",
+    "text_type": "code",
+    "recall": 0.5674755613009135
+  },
+  {
+    "scorer": "preview_attn",
+    "text_type": "code",
+    "recall": 0.565166829029719
+  },
+  {
+    "scorer": "lightning_untrained",
+    "text_type": "code",
+    "recall": 0.15324570298194884
+  },
+  {
+    "scorer": "lightning_trained",
+    "text_type": "code",
+    "recall": 0.46443377137184144
+  },
+  {
+    "scorer": "lightning_trained_plus_recency",
+    "text_type": "code",
+    "recall": 0.5148719271024068
+  },
+  {
+    "scorer": "random",
+    "text_type": "news",
+    "recall": 0.10868722498416901
+  },
+  {
+    "scorer": "recency",
+    "text_type": "news",
+    "recall": 0.6515419642130534
+  },
+  {
+    "scorer": "window_sink",
+    "text_type": "news",
+    "recall": 0.7423828760782878
+  },
+  {
+    "scorer": "linear",
+    "text_type": "news",
+    "recall": 0.5654027700424195
+  },
+  {
+    "scorer": "preview_attn",
+    "text_type": "news",
+    "recall": 0.5491995294888814
+  },
+  {
+    "scorer": "lightning_untrained",
+    "text_type": "news",
+    "recall": 0.15058476587136588
+  },
+  {
+    "scorer": "lightning_trained",
+    "text_type": "news",
+    "recall": 0.489063024520874
+  },
+  {
+    "scorer": "lightning_trained_plus_recency",
+    "text_type": "news",
+    "recall": 0.5781176249186198
+  },
+  {
+    "scorer": "random",
+    "text_type": "prose",
+    "recall": 0.1082406461238861
+  },
+  {
+    "scorer": "recency",
+    "text_type": "prose",
+    "recall": 0.6241826852162679
+  },
+  {
+    "scorer": "window_sink",
+    "text_type": "prose",
+    "recall": 0.7188742756843567
+  },
+  {
+    "scorer": "linear",
+    "text_type": "prose",
+    "recall": 0.5670374115308126
+  },
+  {
+    "scorer": "preview_attn",
+    "text_type": "prose",
+    "recall": 0.5422143558661143
+  },
+  {
+    "scorer": "lightning_untrained",
+    "text_type": "prose",
+    "recall": 0.15195652186870576
+  },
+  {
+    "scorer": "lightning_trained",
+    "text_type": "prose",
+    "recall": 0.47526962955792745
+  },
+  {
+    "scorer": "lightning_trained_plus_recency",
+    "text_type": "prose",
+    "recall": 0.552207620938619
+  },
+  {
+    "scorer": "random",
+    "text_type": "story",
+    "recall": 0.10877148658037186
+  },
+  {
+    "scorer": "recency",
+    "text_type": "story",
+    "recall": 0.6689079880714417
+  },
+  {
+    "scorer": "window_sink",
+    "text_type": "story",
+    "recall": 0.7631445924441019
+  },
+  {
+    "scorer": "linear",
+    "text_type": "story",
+    "recall": 0.5819514671961467
+  },
+  {
+    "scorer": "preview_attn",
+    "text_type": "story",
+    "recall": 0.5645348866780598
+  },
+  {
+    "scorer": "lightning_untrained",
+    "text_type": "story",
+    "recall": 0.15505729705095292
+  },
+  {
+    "scorer": "lightning_trained",
+    "text_type": "story",
+    "recall": 0.5312352538108825
+  },
+  {
+    "scorer": "lightning_trained_plus_recency",
+    "text_type": "story",
+    "recall": 0.6042382876078288
+  },
+  {
+    "scorer": "random",
+    "text_type": "structured",
+    "recall": 0.1088051900267601
+  },
+  {
+    "scorer": "recency",
+    "text_type": "structured",
+    "recall": 0.6532945752143859
+  },
+  {
+    "scorer": "window_sink",
+    "text_type": "structured",
+    "recall": 0.744632625579834
+  },
+  {
+    "scorer": "linear",
+    "text_type": "structured",
+    "recall": 0.5845129688580831
+  },
+  {
+    "scorer": "preview_attn",
+    "text_type": "structured",
+    "recall": 0.5718318144480388
+  },
+  {
+    "scorer": "lightning_untrained",
+    "text_type": "structured",
+    "recall": 0.1545433103044828
+  },
+  {
+    "scorer": "lightning_trained",
+    "text_type": "structured",
+    "recall": 0.5314374725023906
+  },
+  {
+    "scorer": "lightning_trained_plus_recency",
+    "text_type": "structured",
+    "recall": 0.5868469874064127
+  }
+]

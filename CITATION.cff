@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use DSA-Scout, cite the repository and the original sparse-attention work it studies."
+title: "DSA-Scout: Sparse Attention Scoring on GPT-2 Small"
+version: 0.4.0
+date-released: 2026-05-20
+authors:
+  - name: "DSA-Scout contributors"
+license: MIT
+repository-code: "https://github.com/tugrapaydiner/dsa-scout"
+abstract: "A reproducible GPT-2 small measurement workflow for comparing sparse attention block scorers inspired by DeepSeek Sparse Attention."
+keywords:
+  - sparse attention
+  - GPT-2
+  - attention distillation
+  - reproducibility

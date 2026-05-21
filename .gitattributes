@@ -1,0 +1,6 @@
+* text=auto eol=lf
+
+*.png binary
+*.pt binary
+*.svg text eol=lf
+*.ipynb text eol=lf

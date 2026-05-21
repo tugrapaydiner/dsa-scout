@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-05-21T00:30:36+00:00",
+  "git_commit": "336d107fa38eaed37fce254251745dcdedd46b36",
+  "git_dirty": true,
+  "command": "dsa-scout reproduce",
+  "package": {
+    "name": "dsa-scout",
+    "version": "0.4.0"
+  },
+  "model": "gpt2",
+  "corpus_content_hash": "dc217f36e626b65f8a81eb1e870cc1fe8002c06cbbce10c257fcb196f00c2840",
+  "artifact_count": 21,
+  "missing_artifacts": [],
+  "artifacts": {
+    "plots/01_oracle_heatmap.png": {
+      "bytes": 1340318,
+      "sha256": "5293f94f4b5058c6e8ac9662fafe4ce58131e428b33c9238d6ac7b314501f5de"
+    },
+    "plots/02_scorer_distributions.png": {
+      "bytes": 159737,
+      "sha256": "e6d4819dd5cfdb5912c6a0cb1401c8322c29dd3ffe500554aa5625baac9ee67d"
+    },
+    "plots/03_recall_by_layer.png": {
+      "bytes": 268554,
+      "sha256": "098644c741d5bfa5716490359c5b92c0c18aefe8154bde53aa4488c1e1662cfe"
+    },
+    "plots/04_recall_vs_k.png": {
+      "bytes": 165159,
+      "sha256": "e9d8a195cc76aae2f9fc5f42a84c62985a42262644e9cb8c0ccde628d5c6dcf2"
+    },
+    "plots/05_recall_by_text_type.png": {
+      "bytes": 105986,
+      "sha256": "4fccba497b828f571e76645e308148e553c25aa7fb454bbb3eddec73803d9813"
+    },
+    "plots/06_marginal_over_recency.png": {
+      "bytes": 62158,
+      "sha256": "6fef3a03d19aac2a70cf9ef71302bf78fe1a35521c81efd27a61d82bd67bcee6"
+    },
+    "plots/07_training_curve.png": {
+      "bytes": 111553,
+      "sha256": "304d0f011a42651d1ce2ab5fe7f2d2f782b417a8b493331ad15398c18bfbb427"
+    },
+    "plots/08_trained_vs_untrained.png": {
+      "bytes": 98578,
+      "sha256": "b1c11922d0da34246dff89c9999e7e30c87361dba13258c4a5e1102fb1ecf712"
+    },
+    "plots/09_hybrid_weight_sweep.png": {
+      "bytes": 81822,
+      "sha256": "5b3c1430b03d3f26e349683ac9ae675f28dbacf66abde6d05945daeb43497b32"
+    },
+    "results/hybrid_weight_sweep.json": {
+      "bytes": 606,
+      "sha256": "b3db70e589c29a58b959d48b3d4b62fa4582003f3780ea51df596e2b03609152"
+    },
+    "results/marginal_over_recency.json": {
+      "bytes": 56731,
+      "sha256": "42bcc35c34b317659b576542ff8994f17992b5b51cd7c2ec09636dd1293339ea"
+    },
+    "results/metadata.json": {
+      "bytes": 8407,
+      "sha256": "1c1654a81308bb74437e40a600f6cbaf924567f86af658cf0e09b89a436031ef"
+    },
+    "results/recall_by_layer.json": {
+      "bytes": 219882,
+      "sha256": "dd7e903b68069919386e4a39fcc038f3e852bea0ad523e0d2fd1b93d4ca9d958"
+    },
+    "results/recall_by_text_type.json": {
+      "bytes": 4211,
+      "sha256": "b34a892e615b910d601438785b70251a9f37bd18c7f655a6bc0ae7923465366c"
+    },
+    "results/recall_vs_k.json": {
+      "bytes": 326437,
+      "sha256": "b03204fd8e7135434de5649dbcc9bfed61de7114e5b5c922b781404ed72b4121"
+    },
+    "results/summary_stats.json": {
+      "bytes": 17652,
+      "sha256": "dfb2d0ada33d1e2dd1dbacd10c083667404a2cc0c2dac992ca62b3381c3cd7c5"
+    },
+    "results/trained_indexer.pt": {
+      "bytes": 649773,
+      "sha256": "96df3fd81fb5825cac50eac1fb5874b1a4019a4ad5e829ba683ca95ba4bb0bf7"
+    },
+    "results/training_log.json": {
+      "bytes": 25199,
+      "sha256": "6f135e557c1ba9b2e6651816d74d9a39f3f70e4f91ddf125e8740d0a48fd6302"
+    },
+    "corpus_cache/corpus_v3.json": {
+      "bytes": 67003,
+      "sha256": "2a140ed50cd4658a9f1dcec665e13183dfc126402432d47ad87eb9bcba94b663"
+    },
+    "corpus_cache/corpus_v3_1024_dc217f36e626b65f.json": {
+      "bytes": 67003,
+      "sha256": "2a140ed50cd4658a9f1dcec665e13183dfc126402432d47ad87eb9bcba94b663"
+    },
+    "corpus_cache/training_corpus_v3.json": {
+      "bytes": 221386,
+      "sha256": "8244fe8ed5dd1d9e78e31be28c1dbc8d0649f3bd3071140960c7afb27cf09b52"
+    }
+  },
+  "headline_metrics": {
+    "trained_lightning_top8": 0.4982878303527832,
+    "recency_top8": 0.6353370440006256,
+    "hybrid_weight_0_5_top8": 0.5672564895947775
+  },
+  "environment": {
+    "python": "3.12.13",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "device": "cpu",
+    "versions": {
+      "torch": "2.12.0+cpu",
+      "transformers": "5.8.1",
+      "datasets": "4.8.5",
+      "numpy": "2.4.6",
+      "matplotlib": "3.10.9",
+      "pandas": "3.0.3"
+    }
+  }
+}

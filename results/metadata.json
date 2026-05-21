@@ -1,0 +1,199 @@
+{
+  "python": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "device": "cpu",
+  "cuda_available": false,
+  "versions": {
+    "torch": "2.12.0+cpu",
+    "transformers": "5.8.1",
+    "datasets": "4.8.5",
+    "numpy": "2.4.6",
+    "matplotlib": "3.10.9",
+    "pandas": "3.0.3"
+  },
+  "seeds": {
+    "global": 0,
+    "untrained_indexer": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "trained_indexer": 0
+  },
+  "hyperparameters": {
+    "m": 4,
+    "n_I_h": 8,
+    "c_I": 32,
+    "d_c": 128,
+    "K": 8,
+    "K_VALUES": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "MID_LAYERS": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "target_tokens": 1024
+  },
+  "corpus": {
+    "num_samples": 15,
+    "samples_per_category": 3,
+    "target_tokens": 1024,
+    "sources": {
+      "cnn_dailymail": 3,
+      "code_search_net/test": 3,
+      "roneneldan/TinyStories": 3,
+      "sentence-transformers/eli5": 3,
+      "wikitext-103-raw-v1": 3
+    },
+    "token_counts": {
+      "prose_1_test_37": 1024,
+      "prose_2_test_48": 1024,
+      "prose_3_test_56": 1024,
+      "news_1_test_13": 1024,
+      "news_2_test_15": 1024,
+      "news_3_test_17": 1024,
+      "code_1_test_0": 1024,
+      "code_2_test_1": 1024,
+      "code_3_test_2": 1024,
+      "story_1_validation_0": 1024,
+      "story_2_validation_1": 1024,
+      "story_3_validation_2": 1024,
+      "structured_1_train_0": 1024,
+      "structured_2_train_1": 1024,
+      "structured_3_train_3": 1024
+    },
+    "sample_hashes": {
+      "prose_1_test_37": "cacf6ffa026b0f17727de7aeb7bd6309d595199ad3a4dda0a5eb71f78600c60a",
+      "prose_2_test_48": "f36f8d4e7d8be8b25e653d60396dac53d29b5150cc9c24c0dbfa267957c6cfb7",
+      "prose_3_test_56": "a5a2dfc948fd5fc5f2aab02f28cb65bafe6567116754067c401732719a58c3f8",
+      "news_1_test_13": "64954539fd97810d066d9b5498588e0eaf89b198eaf2d965a18762faf6e3bbe9",
+      "news_2_test_15": "2fbeaa0878c05f1ec871cebc56ad1fb636312dcc867b0165695e239474bb2292",
+      "news_3_test_17": "716dbd331914c6d6d1f46cd7163f04ffeab3b78036deee6b3b10103820d4bab2",
+      "code_1_test_0": "7bc54b89c96d44eed4309cdabc86fb606a5c6feb064ec52c3f75d2fbbd32676b",
+      "code_2_test_1": "b2e9a95dd8a6cf5b3dc4bace288ef356e0318e915f7b236dbbdfce41f04fd521",
+      "code_3_test_2": "8d75cd4615e96f65c5a2faf1c1152b3a224ca97edb8a8123731d8ee5d444021a",
+      "story_1_validation_0": "00517137926dd137ed649e00f26db6ef673069f41b21f4c4b4c83e14e5664835",
+      "story_2_validation_1": "3345b1b869fb4be258ff00211e32b4ec45cde3da58d0c6a79bec483a0e07f632",
+      "story_3_validation_2": "8b80fd821dd32f44ffcf9375b51ead1f0d6bd920513377e210c6288adf4b00d0",
+      "structured_1_train_0": "6b2a14d7039ae4d88e1c1503b060ac53e45c520617277d7317ceadfcc3220d9d",
+      "structured_2_train_1": "70ee7f9913e90a882c7e01cc7754016402bb03042832f37d3150908be895e5d2",
+      "structured_3_train_3": "ae3d585154c05d79e6414754e3de69850e5c35860082b9b9e64e67b74317e0b9"
+    },
+    "diversity_stats": {
+      "min_unique_tokens": 234,
+      "median_unique_tokens": 391.0,
+      "max_top_bigram_ratio": 0.21505376344086022
+    },
+    "substitutions": {
+      "code": "code_search_net/test",
+      "story": "roneneldan/TinyStories",
+      "structured": "sentence-transformers/eli5"
+    }
+  },
+  "training": {
+    "initial_loss": 69.25044250488281,
+    "last_loss": 2.1519787311553955,
+    "final_loss": 0.3653396394196898,
+    "best_loss": 0.3653396394196898,
+    "best_checkpoint_eval_loss": 0.4736774199688807,
+    "best_step": 602,
+    "loss_delta": 68.88510286546312,
+    "actual_steps": 803,
+    "early_stopped": true,
+    "best_rolling_loss": 0.3653396394196898,
+    "num_examples": 250,
+    "config": {
+      "steps": 2000,
+      "lr": 0.001,
+      "target_layers": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "log_every": 100,
+      "seed": 0,
+      "max_length": 1024,
+      "oracle_scale": 32.0,
+      "early_stop_patience": 200,
+      "early_stop_min_delta": 0.01,
+      "warmup_steps": 50,
+      "min_lr": 1e-05,
+      "grad_clip": 1.0
+    },
+    "training_corpus": {
+      "num_texts": 50,
+      "sources": {
+        "cnn_dailymail/train": 12,
+        "code_search_net/validation": 13,
+        "roneneldan/TinyStories/train": 13,
+        "wikitext-103-raw-v1/train": 12
+      },
+      "min_unique_tokens": 203,
+      "max_top_bigram_ratio": 0.2883675464320626,
+      "hashes": [
+        "f9b880530806f4cfaa255d645685a07db8d02ca5b00e514ab90768459458f03a",
+        "0b3ad5839c6bd5f26b40140820c405f3a7c0d7a4994df1a6d3bda7737aa30748",
+        "6a334dd4192935e7694f15bec024dd928f435c667d3bc688755c823ceb35a660",
+        "a7e75d1b359ebbc2f5e4530151b73b712b75f7dc630ce6a3afb41819e0db81fd",
+        "6157ff7afe51a94edde1372cfe68391573c5c4cb1a207f964afba03357f3cd46",
+        "8676a3969ba01a79efd9054f49bc20ece8b9175169b8e235f0ce63161e754b82",
+        "b846200615c4556b2d33b01910f1e2f1194bf9d0d4cfe8d699510f7f895e102b",
+        "0bb4309bfe90946b031d6cb4b3eb36c1f72e1713c372a23102f18f18c5a2951d",
+        "6de646e733db380d3b75079f734013fe3f8f438d71d289ed321286d8b06b9435",
+        "96e0d4eebec5ee7fc15b774c5654fed89ea8817e396be579ec7ace2f99d7982b",
+        "5d022e46e953ffaa4765f42ba96cc0863cbc0a5a4ee3560f1bad51c80f40b265",
+        "58851831cd8c35bce17a6453b270377a4912e00241d3e3e132cccd0ecef40583",
+        "f9996b0329511a87da6262cc30ad00bd1b6d4e50bd2181c07055abf00b7e0a8b",
+        "4a636c03a766a7cc29a34fee2d873f5762339dc05d9dfaec6c47df3aecf9881f",
+        "bcde22e79b321d303a4e248cd1036a9364aecf2deb82c0fe9bb61bbc82d59a73",
+        "580175663c34c62143e2dab487c32dff3c11048608c077c754b4add1ec6afef6",
+        "ca5ae27349ade526cc60fd5f67923c6e2247e02c1c674febcc833bd8bcb49991",
+        "ee3b3d5db6f0b30b013477b6b9187901577e217f783be2918721e9d65504ddcb",
+        "895e3bf99d028189d4835d54f13927d1ac69b25026aeb77ad98c0eaa69689935",
+        "1e8e856128d1e02ad3140f236c71dfae7e7958fc6afac24bd3f10031b08897f6",
+        "68dbd737c29348052d06d35309628fa63b74431a576ff7b2d18ef988b888ef47",
+        "59d5f810c08eb39ff440546fa4a40deb3f53386c4fbc6017ecd9e182eed60963",
+        "ad2460d11893254e6d320a260461e65641335964343fc6cd34442713911572a5",
+        "844b86b15cea3c9507a0230cdaa4e991a86189f31c8e908818778e7084cfd03e",
+        "eefeb7d3746204313cece70e0bd9121e9df06864eed67e7bc0d183407f78fc2d",
+        "1400e716b99396757d0c266d0cc8dcf047ae3c39f341328b9402febddf2247ed",
+        "f4a1624895d70e7d1876387a3fbb200bd4d8b0ab53a5d407d570239b0b032f6d",
+        "292c66d50a7869bde499ee42ed4032aaba6eaa9c204c5cc6e506898d80101067",
+        "e2201f68affefadbb6323f57a33604a922dbbc361a74d80ad8e929d7479ce288",
+        "3935f9dba4b0d0db92186666d5ca57da3eb991559258cf22ff94298d3d4244bf",
+        "8bd0b67a1b48f8b678758c82c3a19bef20f2f31c56a719c497a8be99858cf546",
+        "7ebd92e6a21323be2402a2740010fd2e6f7d3f32c3f17dfa770bbe689dc37abe",
+        "d41173e2d20f65d37abb47dc057e46da068a3d4d7d123ce3e1080f883ab111c0",
+        "323310a13c16a579f2cb7bc2d66829f0c0126b47af32eb78d4269259f73b8da5",
+        "cb9af35ae3a66e160f245b6747f1fbd9f40d5896da1e9b0293166c8fed1e04fc",
+        "a5d16bedb0db569ba377f020794c007d2bccf2efe49733eebbf0b8f6e23c5776",
+        "ab5afbcf8daf02df46117835d343f38d4512f2cd1c2446d0d80011989dc66bb0",
+        "6c49bdcbce3beeeff3d51b4d8f2c80817297bd176d4f63336c11d8054a158fb8",
+        "b3522a955916c35a7cf1a985156157393579ddfb637be9d3c77036bbb561e265",
+        "f8b3b820d34b7030818858e8d33b582674bf2f1dbcc289df78676c3bd385e741",
+        "620718afc9373655bd345fdfca364a375fc6d8242623bbf37535ebb2aa75f16e",
+        "2de708a8da0cb1389272a288c1c0384082859e9410290fa44f53f5d00b8d49a1",
+        "f5a9c369c30da3c4a0fafdcae424498c42e0280dca0a7b9f257f3dd05a98fd85",
+        "bdd7a457c6647d7c15b67dc56d81eceb03e75abb235d213c3afe3a2daff8d5c3",
+        "f9ca3fc04b7266f9e3ecef0fcfbc96ba6bf3088b2a52f5b3069f0cd3eceb1bdf",
+        "aef2d3ba41ed9c19a62a3bd53272827e9c401a9f8198283f163fd00094fc130b",
+        "bb04886ef31e20c220069a6438791570a1f8afad82d860afaf92c3ce9fdb97b7",
+        "e277f1af936824394af4c53e0d7c5d37dc238ce47991194120a01f2d37bd84a3",
+        "5a5da7f988826e233a38ff007fc98f265c09219a8438cd190873ff7520f94560",
+        "72f1c6d67c2e614de611237eddf6964e45b41adb61ea66df278b767dc5f8a67a"
+      ]
+    },
+    "hybrid_weight": 0.5
+  }
+}
